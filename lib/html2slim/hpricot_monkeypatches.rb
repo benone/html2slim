@@ -57,7 +57,7 @@ class Hpricot::Elem
 
     r += name unless skip_tag_name?
     r += slim_id
-    r += slim_class
+    # r += slim_class
     r += slim_attributes
     r
   end
@@ -96,7 +96,7 @@ class Hpricot::Elem
     # remove_attribute('class')
     remove_attribute('id')
     # has_attributes?? "[#{attributes_as_html.to_s.strip}]" : ""
-    has_attributes?? " [#{attributes_as_html.to_s.strip}]" : ""
+    has_attributes?? " #{attributes_as_html.to_s.strip}" : ""
   end
 
   def has_attributes?
