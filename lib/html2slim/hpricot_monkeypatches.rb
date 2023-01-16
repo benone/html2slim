@@ -93,9 +93,10 @@ class Hpricot::Elem
   end
 
   def slim_attributes
-    remove_attribute('class')
+    # remove_attribute('class')
     remove_attribute('id')
-    has_attributes?? "[#{attributes_as_html.to_s.strip}]" : ""
+    # has_attributes?? "[#{attributes_as_html.to_s.strip}]" : ""
+    has_attributes?? " [#{attributes_as_html.to_s.strip}]" : ""
   end
 
   def has_attributes?
@@ -107,7 +108,8 @@ class Hpricot::Elem
   end
 
   def has_class?
-    has_attribute?('class') && !(BLANK_RE === self['class'])
+    false
+    # has_attribute?('class') && !(BLANK_RE === self['class'])
   end
 
   def ruby?
